@@ -24,7 +24,8 @@
   },
   "homepage": "https://github.com/stevenjoezhang/live2d-widget#readme",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.7.2"
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "jquery-pjax": "^2.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
