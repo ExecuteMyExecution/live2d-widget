@@ -30,7 +30,8 @@ class Model {
         if (this.useCDN) {
             if (!this.modelList) await this.loadModelList();
             const target = randomSelection(this.modelList.models[modelId]);
-            loadlive2d("live2d", `${this.cdnPath}model/${target}/index.json`);
+            // loadlive2d("live2d", `${this.cdnPath}model/${target}/index.json`);
+            loadlive2d("live2d", `${this.cdnPath}model/${target}`);
         } else {
             loadlive2d("live2d", `${this.apiPath}get/?id=${modelId}-${modelTexturesId}`);
             console.log(`Live2D 模型 ${modelId}-${modelTexturesId} 加载完成`);
@@ -43,7 +44,8 @@ class Model {
         if (this.useCDN) {
             if (!this.modelList) await this.loadModelList();
             const target = randomSelection(this.modelList.models[modelId]);
-            loadlive2d("live2d", `${this.cdnPath}model/${target}/index.json`);
+            // loadlive2d("live2d", `${this.cdnPath}model/${target}/index.json`);
+            loadlive2d("live2d", `${this.cdnPath}model/${target}`);
             showMessage("我的新衣服好看嘛？", 4000, 10);
         } else {
             // 可选 "rand"(随机), "switch"(顺序)
