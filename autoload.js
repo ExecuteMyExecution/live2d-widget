@@ -1,5 +1,7 @@
 // live2d_path 参数建议使用绝对路径
 const live2d_path = "https://cdn.jsdelivr.net/gh/ExecuteMyExecution/live2d-widget@build/";
+const live2d_version = "b5d5e3f"; // 更新版本时修改此处 commit hash
+const live2d_cdn = `https://cdn.jsdelivr.net/gh/ExecuteMyExecution/live2d-widget@${live2d_version}/`;
 //const live2d_path = "/live2d-widget/";
 
 // 封装异步加载资源的方法
@@ -27,13 +29,13 @@ function loadExternalResource(url, type) {
 // 加载 waifu.css live2d.min.js waifu-tips.js
 if (screen.width >= 768) {
 	Promise.all([
-		loadExternalResource(live2d_path + "waifu.css", "css"),
-		loadExternalResource(live2d_path + "live2d.min.js", "js"),
-		loadExternalResource(live2d_path + "waifu-tips.js", "js")
+		loadExternalResource(live2d_cdn + "waifu.css", "css"),
+		loadExternalResource(live2d_cdn + "live2d.min.js", "js"),
+		loadExternalResource(live2d_cdn + "waifu-tips.js", "js")
 	]).then(() => {
 		// 配置选项的具体用法见 README.md
 		initWidget({
-			waifuPath: live2d_path + "waifu-tips.json",
+			waifuPath: live2d_cdn + "waifu-tips.json",
 			//apiPath: "https://live2d.fghrsh.net/api/",
 			cdnPath: "https://cdn.jsdelivr.net/gh/ExecuteMyExecution/live2d_api/",
 			// AI 聊天代理地址（Cloudflare Worker）
