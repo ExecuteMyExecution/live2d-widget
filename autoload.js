@@ -36,7 +36,9 @@ if (screen.width >= 768) {
 			waifuPath: live2d_path + "waifu-tips.json",
 			//apiPath: "https://live2d.fghrsh.net/api/",
 			cdnPath: "https://cdn.jsdelivr.net/gh/ExecuteMyExecution/live2d_api/",
-			tools: ["hitokoto", "asteroids", "switch-model", "switch-texture", "photo", "info", "quit"]
+			// AI 聊天代理地址（Cloudflare Worker）
+			chatApiUrl: "https://live2d-chat-worker.771849622.workers.dev",
+			tools: ["chat", "hitokoto", "asteroids", "switch-model", "switch-texture", "photo", "info", "quit"]
 		});
 	});
 }

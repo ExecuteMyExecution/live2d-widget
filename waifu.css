@@ -107,6 +107,147 @@
 	fill: #0684bd; /* #34495e */
 }
 
+/* ========== Chat Panel ========== */
+
+#waifu-chat {
+	background: rgba(255, 255, 255, .85);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border: 1px solid rgba(224, 186, 140, .4);
+	border-radius: 12px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, .1);
+	display: flex;
+	flex-direction: column;
+	height: 400px;
+	left: 310px;
+	opacity: 0;
+	pointer-events: none;
+	position: absolute;
+	bottom: 10px;
+	transform: translateX(-10px);
+	transition: opacity .3s, transform .3s;
+	width: 320px;
+	z-index: 2;
+}
+
+#waifu-chat.waifu-chat-active {
+	opacity: 1;
+	pointer-events: auto;
+	transform: translateX(0);
+}
+
+#waifu-chat-header {
+	align-items: center;
+	background: linear-gradient(135deg, rgba(236, 217, 188, .7), rgba(191, 158, 118, .5));
+	border-radius: 12px 12px 0 0;
+	color: #5a4a3a;
+	display: flex;
+	font-size: 14px;
+	font-weight: bold;
+	justify-content: space-between;
+	line-height: 1;
+	padding: 10px 14px;
+}
+
+#waifu-chat-close {
+	cursor: pointer;
+	font-size: 20px;
+	line-height: 1;
+	opacity: .6;
+	transition: opacity .2s;
+}
+
+#waifu-chat-close:hover {
+	opacity: 1;
+}
+
+#waifu-chat-messages {
+	flex: 1;
+	overflow-y: auto;
+	padding: 10px;
+}
+
+#waifu-chat-messages::-webkit-scrollbar {
+	width: 4px;
+}
+
+#waifu-chat-messages::-webkit-scrollbar-thumb {
+	background: rgba(191, 158, 118, .3);
+	border-radius: 2px;
+}
+
+.waifu-chat-bubble {
+	border-radius: 10px;
+	font-size: 13px;
+	line-height: 1.5;
+	margin-bottom: 8px;
+	max-width: 85%;
+	padding: 8px 12px;
+	word-break: break-word;
+}
+
+.waifu-chat-user {
+	background: linear-gradient(135deg, #6cb4ee, #5b9bd5);
+	color: #fff;
+	margin-left: auto;
+}
+
+.waifu-chat-assistant {
+	background: rgba(236, 217, 188, .6);
+	color: #3a3a3a;
+	margin-right: auto;
+}
+
+.waifu-chat-error {
+	color: #d9534f;
+}
+
+#waifu-chat-input-area {
+	align-items: center;
+	border-top: 1px solid rgba(224, 186, 140, .3);
+	display: flex;
+	gap: 8px;
+	padding: 8px 10px;
+}
+
+#waifu-chat-input {
+	background: rgba(255, 255, 255, .7);
+	border: 1px solid rgba(224, 186, 140, .4);
+	border-radius: 8px;
+	flex: 1;
+	font-size: 13px;
+	outline: none;
+	padding: 8px 10px;
+	transition: border-color .2s;
+}
+
+#waifu-chat-input:focus {
+	border-color: #5b9bd5;
+}
+
+#waifu-chat-send {
+	align-items: center;
+	background: linear-gradient(135deg, #6cb4ee, #5b9bd5);
+	border: none;
+	border-radius: 8px;
+	color: #fff;
+	cursor: pointer;
+	display: flex;
+	height: 34px;
+	justify-content: center;
+	transition: opacity .2s;
+	width: 34px;
+}
+
+#waifu-chat-send:hover {
+	opacity: .85;
+}
+
+#waifu-chat-send:disabled {
+	cursor: not-allowed;
+	opacity: .5;
+}
+
 @keyframes shake {
 	2% {
 		transform: translate(.5px, -1.5px) rotate(-.5deg);

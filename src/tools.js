@@ -1,4 +1,5 @@
 import fa_comment from "@fortawesome/fontawesome-free/svgs/solid/comment.svg";
+import fa_comment_dots from "@fortawesome/fontawesome-free/svgs/regular/comment-dots.svg";
 import fa_paper_plane from "@fortawesome/fontawesome-free/svgs/solid/paper-plane.svg";
 import fa_user_circle from "@fortawesome/fontawesome-free/svgs/solid/circle-user.svg";
 import fa_street_view from "@fortawesome/fontawesome-free/svgs/solid/street-view.svg";
@@ -22,6 +23,10 @@ function showHitokoto() {
 }
 
 const tools = {
+    "chat": {
+        icon: fa_comment_dots,
+        callback: () => {}
+    },
     "hitokoto": {
         icon: fa_comment,
         callback: showHitokoto

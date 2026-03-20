@@ -1,4 +1,5 @@
 import Model from "./model.js";
+import ChatPanel from "./chat.js";
 import showMessage from "./message.js";
 import randomSelection from "./utils.js";
 import tools from "./tools.js";
@@ -23,6 +24,10 @@ function loadWidget(config) {
         if (!Array.isArray(config.tools)) {
             config.tools = Object.keys(tools);
         }
+        // 如果没有配置 chatApiUrl，则从工具列表中移除 chat
+        if (!config.chatApiUrl) {
+            config.tools = config.tools.filter(t => t !== "chat");
+        }
         for (let tool of config.tools) {
             if (tools[tool]) {
                 const { icon, callback } = tools[tool];
@@ -31,6 +36,15 @@ function loadWidget(config) {
             }
         }
     })();
+
+    // 初始化聊天面板
+    if (config.chatApiUrl) {
+        const chatPanel = new ChatPanel(config);
+        const chatBtn = document.getElementById("waifu-tool-chat");
+        if (chatBtn) {
+            chatBtn.addEventListener("click", () => chatPanel.toggle());
+        }
+    }
 
     function welcomeMessage(time) {
         if (location.pathname === "/") { // 如果是主页
@@ -76,7 +90,9 @@ function loadWidget(config) {
                 userActionTimer = null;
             } else if (!userActionTimer) {
                 userActionTimer = setInterval(() => {
-                    showMessage(messageArray, 6000, 9);
+                    if (!window._waifuChatOpen) {
+                        showMessage(messageArray, 6000, 9);
+                    }
                 }, 20000);
             }
         }, 1000);

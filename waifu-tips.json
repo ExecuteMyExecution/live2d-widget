@@ -18,6 +18,15 @@
 		]
 	  },
 	  {
+		"selector": "#waifu-tool-chat",
+		"text": [
+		  "想和我聊天吗？我可是 AI 助手哦！",
+		  "有什么问题尽管问我吧～",
+		  "来和我说说话吧！",
+		  "点击这里可以和我 AI 对话哦！"
+		]
+	  },
+	  {
 		"selector": "#waifu-tool-asteroids",
 		"text": [
 		  "要不要来玩飞机大战？",
