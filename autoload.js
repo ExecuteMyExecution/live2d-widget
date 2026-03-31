@@ -1,6 +1,6 @@
 // live2d_path 参数建议使用绝对路径
 const live2d_path = "https://cdn.jsdelivr.net/gh/ExecuteMyExecution/live2d-widget@build/";
-const live2d_version = "b5d5e3f"; // 更新版本时修改此处 commit hash
+const live2d_version = "c649d8b"; // 更新版本时修改此处 commit hash
 const live2d_cdn = `https://cdn.jsdelivr.net/gh/ExecuteMyExecution/live2d-widget@${live2d_version}/`;
 //const live2d_path = "/live2d-widget/";
 
